@@ -3,11 +3,10 @@ import dotenv from "dotenv";
 const app = express();
 const port = 3000;
 
-// const apiUrl = process.env.API_URL;
-
 dotenv.config();
+const apiUrl = process.env.API_URL;
 
-// console.log(apiUrl);
+console.log(apiUrl);
 app.use(express.static("public"));
 
 const html = `
@@ -17,7 +16,7 @@ const html = `
   </head>
   <body>
    <script  >
-   localStorage.setItem("apiUrl" ,"${process.env.API_URL}");
+   localStorage.setItem("apiUrl" ,"${apiUrl}");
    window.location.href = "/"
    </script>
   </body>
